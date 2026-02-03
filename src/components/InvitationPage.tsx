@@ -42,7 +42,7 @@ function HeroSection() {
             >
                 <div className="mb-8">
                     <span className="block font-lato text-xs md:text-sm tracking-[0.4em] uppercase text-stone-800 mb-2 font-bold">
-                        Nos Casamos
+                        We Are Getting Married
                     </span>
                     <div className="w-px h-8 bg-stone-800 mx-auto" />
                 </div>
@@ -54,7 +54,7 @@ function HeroSection() {
                 <div className="mt-8 flex flex-col items-center gap-4">
                     <div className="w-px h-8 bg-stone-800 mx-auto" />
                     <p className="font-lato text-xl md:text-2xl tracking-[0.2em] text-stone-800 font-semibold">
-                        08 . 05 . 2027
+                        05 . 08 . 2027
                     </p>
                 </div>
             </motion.div>
@@ -95,7 +95,7 @@ function IntroSection() {
             >
                 <Heart className="w-6 h-6 text-stone-400 mx-auto mb-6" />
                 <p className="font-dancing text-3xl md:text-5xl text-stone-600 leading-relaxed mb-8">
-                    &quot;Contigo, cada día es una celebración. Queremos compartir nuestro día más especial con las personas que más queremos.&quot;
+                    &quot;With you, every day is a celebration. We want to share our most special day with the people we love the most.&quot;
                 </p>
             </motion.div>
         </section>
@@ -104,23 +104,36 @@ function IntroSection() {
 
 function TimelineSection() {
     const events = [
-        { time: "16:00", title: "Ceremonia Civil", icon: <Heart size={18} />, desc: "Jardines del Château" },
-        { time: "18:00", title: "Cóctel & Aperitivos", icon: <GlassWater size={18} />, desc: "Terraza Principal" },
-        { time: "20:30", title: "Cena de Gala", icon: <Utensils size={18} />, desc: "Gran Salón de Cristal" },
-        { time: "23:00", title: "Fiesta", icon: <Music size={18} />, desc: "Hasta que salga el sol" },
+        { time: "4:00 PM", title: "Civil Ceremony", icon: <Heart size={18} />, desc: "Château Gardens" },
+        { time: "6:00 PM", title: "Cocktail & Appetizers", icon: <GlassWater size={18} />, desc: "Main Terrace" },
+        { time: "8:30 PM", title: "Gala Dinner", icon: <Utensils size={18} />, desc: "Crystal Hall" },
+        { time: "11:00 PM", title: "Party", icon: <Music size={18} />, desc: "Until sunrise" },
     ];
 
     return (
-        <section className="py-24 bg-stone-50/50">
-            <div className="max-w-4xl mx-auto px-6">
+        <section className="py-24 relative overflow-hidden">
+            {/* Background Video */}
+            <div className="absolute inset-0 z-0 after:content-[''] after:absolute after:inset-0 after:bg-white/85">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                >
+                    <source src="/14e21f7c-c3db-4ecc-837a-882f2f484c4d.mp4" type="video/mp4" />
+                </video>
+            </div>
+
+            <div className="max-w-4xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="font-lato text-xs tracking-[0.3em] uppercase text-stone-400">Agenda</span>
-                    <h2 className="font-playfair text-4xl md:text-5xl mt-3 text-stone-800">El Gran Día</h2>
+                    <span className="font-lato text-xs tracking-[0.3em] uppercase text-stone-400">Schedule</span>
+                    <h2 className="font-playfair text-4xl md:text-5xl mt-3 text-stone-800">The Big Day</h2>
                 </div>
 
                 <div className="relative">
                     {/* Vertical Line */}
-                    <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-px bg-stone-200 transform md:-translate-x-1/2" />
+                    <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-px bg-stone-300 transform md:-translate-x-1/2" />
 
                     <div className="space-y-12">
                         {events.map((event, index) => (
@@ -163,26 +176,30 @@ function LocationSection() {
     return (
         <section className="py-24 px-6 text-center">
             <div className="max-w-4xl mx-auto">
-                <span className="font-lato text-xs tracking-[0.3em] uppercase text-stone-400">Ubicación</span>
+                <span className="font-lato text-xs tracking-[0.3em] uppercase text-stone-400">Location</span>
                 <h2 className="font-playfair text-4xl md:text-5xl mt-3 mb-12 text-stone-800">Château de Rêve</h2>
 
                 <div className="grid md:grid-cols-2 gap-8 items-center bg-white p-2 shadow-sm border border-stone-100 max-w-3xl mx-auto">
                     <div className="h-64 md:h-80 bg-stone-200 w-full relative overflow-hidden group">
-                        {/* Placeholder for Map Image */}
-                        <div className="absolute inset-0 flex items-center justify-center text-stone-400 bg-stone-100">
-                            <MapPin size={40} className="text-stone-300" />
-                            <span className="ml-2 font-serif italic">Mapa aquí</span>
-                        </div>
-                        <a href="#" className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d183050.2925203792!2d4.793674686008129!3d44.07923485787682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b591b64aeb88b5%3A0xe744e45d9e5f5e56!2sProvence-Alpes-C%C3%B4te%20d&#39;Azur%2C%20France!5e0!3m2!1sen!2sus!4v1707000000000!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700"
+                        />
                     </div>
                     <div className="text-left p-6 md:p-10 space-y-4">
-                        <h3 className="font-playfair text-2xl text-stone-700">Provence, Francia</h3>
+                        <h3 className="font-playfair text-2xl text-stone-700">Provence, France</h3>
                         <p className="font-lato text-stone-500 leading-relaxed text-sm">
-                            Un lugar mágico rodeado de campos de lavanda y viñedos centenarios. Disponemos de servicio de transporte desde el centro de la ciudad.
+                            A magical place surrounded by lavender fields and century-old vineyards. Shuttle service available from the city center.
                         </p>
-                        <button className="text-xs uppercase tracking-[0.2em] border-b border-stone-800 pb-1 mt-4 hover:opacity-50 transition-opacity">
-                            Ver en Google Maps
-                        </button>
+                        <a href="https://www.google.com/maps/place/Provence-Alpes-Côte+d'Azur,+France" target="_blank" rel="noopener noreferrer" className="text-xs uppercase tracking-[0.2em] border-b border-stone-800 pb-1 mt-4 hover:opacity-50 transition-opacity">
+                            View on Google Maps
+                        </a>
                     </div>
                 </div>
             </div>
@@ -195,18 +212,18 @@ function AccommodationSection() {
         <section className="py-24 bg-[#F8F6F1] px-6">
             <div className="max-w-4xl mx-auto text-center">
                 <Hotel className="w-8 h-8 mx-auto text-stone-400 mb-6" />
-                <h2 className="font-playfair text-3xl md:text-4xl text-stone-800 mb-12">Recomendaciones de Alojamiento</h2>
+                <h2 className="font-playfair text-3xl md:text-4xl text-stone-800 mb-12">Accommodation</h2>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {[1, 2, 3].map((i) => (
                         <div key={i} className="bg-white p-8 text-center border border-stone-100 shadow-sm hover:shadow-md transition-shadow duration-300">
                             <h3 className="font-playfair text-xl text-stone-700 mb-2">Hotel {i === 1 ? 'Central' : i === 2 ? 'Boutique' : 'Rural'}</h3>
-                            <p className="text-stone-500 text-xs uppercase tracking-widest mb-4">4 Estrellas</p>
+                            <p className="text-stone-500 text-xs uppercase tracking-widest mb-4">4 Stars</p>
                             <p className="font-lato text-sm text-stone-500 mb-6 leading-relaxed">
-                                A solo 10 minutos del lugar de la celebración. Incluye desayuno.
+                                Just 10 minutes from the venue. Breakfast included.
                             </p>
                             <a href="#" className="text-[10px] uppercase font-bold tracking-[0.2em] text-amber-700/70 hover:text-amber-800">
-                                Reservar
+                                Book Now
                             </a>
                         </div>
                     ))}
@@ -215,12 +232,12 @@ function AccommodationSection() {
                 <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 text-stone-500">
                     <div className="flex items-center gap-4">
                         <Car size={20} />
-                        <span className="font-lato text-sm uppercase tracking-wider">Parking Gratuito</span>
+                        <span className="font-lato text-sm uppercase tracking-wider">Free Parking</span>
                     </div>
                     <div className="w-px h-4 bg-stone-300 hidden md:block" />
                     <div className="flex items-center gap-4">
                         <Hotel size={20} />
-                        <span className="font-lato text-sm uppercase tracking-wider">Descuento Boda</span>
+                        <span className="font-lato text-sm uppercase tracking-wider">Wedding Rate</span>
                     </div>
                 </div>
             </div>
@@ -245,7 +262,7 @@ function RsvpSection() {
     return (
         <section className="py-32 px-6 relative overflow-hidden bg-white text-center">
             <div className="max-w-lg mx-auto relative z-10">
-                <span className="font-dancing text-4xl text-amber-800/40 block mb-6">Rsvp</span>
+                <span className="font-dancing text-4xl text-amber-800/40 block mb-6">RSVP</span>
 
                 {step === 1 ? (
                     <motion.div
@@ -253,19 +270,19 @@ function RsvpSection() {
                         whileInView={{ opacity: 1 }}
                         className="space-y-8"
                     >
-                        <h2 className="font-playfair text-4xl md:text-5xl text-stone-800 mb-4">¿Nos acompañas?</h2>
+                        <h2 className="font-playfair text-4xl md:text-5xl text-stone-800 mb-4">Will you join us?</h2>
                         <p className="font-lato text-stone-500 text-sm tracking-wide">
-                            Por favor, confirma antes del 1 de marzo
+                            Please confirm by March 1st
                         </p>
 
                         <form onSubmit={handleSubmit} className="space-y-6 text-left mt-8">
                             <div className="space-y-1">
-                                <label className="text-xs uppercase tracking-[0.2em] text-stone-400 pl-1">Nombre Completo</label>
+                                <label className="text-xs uppercase tracking-[0.2em] text-stone-400 pl-1">Full Name</label>
                                 <input
                                     required
                                     type="text"
                                     className="w-full bg-stone-50 border-b border-stone-200 p-3 focus:outline-none focus:border-amber-400/50 focus:bg-amber-50/10 transition-colors font-serif text-stone-700"
-                                    placeholder="Tu nombre"
+                                    placeholder="Your Name"
                                 />
                             </div>
 
@@ -276,15 +293,15 @@ function RsvpSection() {
                                         required
                                         type="email"
                                         className="w-full bg-stone-50 border-b border-stone-200 p-3 focus:outline-none focus:border-amber-400/50 focus:bg-amber-50/10 transition-colors font-serif text-stone-700"
-                                        placeholder="correo@ejemplo.com"
+                                        placeholder="email@example.com"
                                     />
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="text-xs uppercase tracking-[0.2em] text-stone-400 pl-1">Invitados</label>
+                                    <label className="text-xs uppercase tracking-[0.2em] text-stone-400 pl-1">Guests</label>
                                     <select className="w-full bg-stone-50 border-b border-stone-200 p-3 focus:outline-none focus:border-amber-400/50 focus:bg-amber-50/10 transition-colors font-serif text-stone-700">
-                                        <option>1 Adulto</option>
-                                        <option>2 Adultos</option>
-                                        <option>Familia (2+)</option>
+                                        <option>1 Adult</option>
+                                        <option>2 Adults</option>
+                                        <option>Family (2+)</option>
                                     </select>
                                 </div>
                             </div>
@@ -294,7 +311,7 @@ function RsvpSection() {
                                 type="submit"
                                 className="w-full bg-[#3A3A3A] text-white py-4 mt-8 uppercase tracking-[0.2em] text-xs font-bold hover:bg-black transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                             >
-                                {isSubmitting ? 'Enviando...' : 'Confirmar Asistencia'}
+                                {isSubmitting ? 'Sending...' : 'Confirm Attendance'}
                             </button>
                         </form>
                     </motion.div>
@@ -307,13 +324,13 @@ function RsvpSection() {
                         <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600/70 border border-green-100">
                             <Check size={32} />
                         </div>
-                        <h3 className="font-playfair text-3xl text-stone-800 mb-4">¡Gracias por confirmar!</h3>
-                        <p className="font-lato text-stone-500">Estamos deseando verte.</p>
+                        <h3 className="font-playfair text-3xl text-stone-800 mb-4">Thanks for confirming!</h3>
+                        <p className="font-lato text-stone-500">We can&apos;t wait to see you.</p>
                         <button
                             onClick={() => setStep(1)}
                             className="text-xs uppercase tracking-[0.2em] text-stone-400 mt-8 hover:text-stone-600 underline decoration-stone-200 underline-offset-4"
                         >
-                            Enviar otra respuesta
+                            Send another response
                         </button>
                     </motion.div>
                 )}
@@ -325,7 +342,7 @@ function RsvpSection() {
 function Footer() {
     return (
         <footer className="py-12 text-center text-stone-300 text-[10px] font-lato uppercase tracking-[0.3em] bg-[#2A2A2A]">
-            <p>Mar & Jaume • 08.05.2027</p>
+            <p>Mar & Jaume • 05.08.2027</p>
         </footer>
     );
 }
