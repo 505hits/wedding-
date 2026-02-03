@@ -30,6 +30,7 @@ export default function Home() {
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
+              poster="/enveloppe.jpg"
               muted
               playsInline
               onEnded={handleVideoEnd}
