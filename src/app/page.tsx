@@ -31,7 +31,7 @@ export default function Home() {
           >
             <video
               ref={videoRef}
-              className="w-full h-full object-cover absolute inset-0"
+              className="w-full h-full object-contain md:object-cover absolute inset-0"
               poster="/enveloppe.jpg"
               preload="auto"
               muted
@@ -50,7 +50,7 @@ export default function Home() {
               <img
                 src="/enveloppe.jpg"
                 alt="Envelope"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain md:object-cover"
               />
             </div>
 
