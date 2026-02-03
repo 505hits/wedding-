@@ -81,7 +81,7 @@ function IntroSection() {
                 className="mb-12"
             >
                 <img
-                    src="/Gemini_Generated_Image_f0s8jpf0s8jpf0s8-removebg-preview.png"
+                    src="/intro-decoration.png"
                     alt="Decorative Element"
                     className="w-48 md:w-64 mx-auto opacity-90"
                 />

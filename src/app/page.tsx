@@ -30,7 +30,6 @@ export default function Home() {
             <video
               ref={videoRef}
               className="w-full h-full object-cover"
-              autoPlay
               muted
               playsInline
               onEnded={handleVideoEnd}
@@ -38,6 +37,13 @@ export default function Home() {
               <source src="/51c82a90-20fc-411d-854f-7d3ba46a52ec.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+
+            {/* Hint */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <p className="text-white/80 font-lato tracking-widest uppercase text-sm animate-pulse">
+                Tap to Open
+              </p>
+            </div>
           </div>
         )}
 
